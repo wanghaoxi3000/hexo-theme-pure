@@ -4,12 +4,12 @@
       <% if(theme.profile && theme.profile.enabled) { %>
       <% var profile = theme.profile; %>
       <div class="profile-block text-center">
-        <a id="avatar" href="<%= profile.follow %>" target="_blank">
-          <img class="img-circle img-rotate" src="<%= ( profile.gravatar ? gravatar(profile.gravatar, 128) : url_for(profile.avatar)) %>" width="200" height="200">
+        <a href="<%= profile.follow %>" target="_blank">
+          <img class="img-responsive" src="<%= ( profile.gravatar ? gravatar(profile.gravatar, 128) : url_for(profile.avatar)) %>" >
         </a>
         <h2 id="name" class="hidden-xs hidden-sm"><%= profile.author %></h2>
         <h3 id="title" class="hidden-xs hidden-sm hidden-md"><%= profile.author_title %></h3>
-        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> <%= profile.location %></small>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><%= profile.author_description %></small>
       </div>
       <% } %>
       <%- partial('_search/index') %>
