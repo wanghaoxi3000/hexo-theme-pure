@@ -172,6 +172,7 @@ postCount:
 plugins:
   # google_analytics: # enter the tracking ID for your Google Analytics
   google_site_verification: g1JnNWv6WMjhUYDMz-jUeVtjUYrMTkraj95u8z5USrg
+  baidu_site_verification: MeyBQbsO2V
   baidu_analytics: 2aa84eb5eced551a567f24c1717e00b4
   # tencent_analytics: 
   
