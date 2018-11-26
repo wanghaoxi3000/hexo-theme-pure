@@ -31,7 +31,7 @@ site:
     width: 40
     height: 40
     url: ../images/logo.png
-  title: Dark-Lab # 页面title
+  # title:  # 页面title
   favicon: /favicon.png
   board: <p>恭喜你发现了这个小站</p> # 站点公告
   copyright: true # 底部版权信息
