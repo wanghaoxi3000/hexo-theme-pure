@@ -234,3 +234,16 @@ resume:
       title: 安防监控平台前端
       time: 2017.11 - 2018.6
       decription: 使用 Vue.js 框架，配合 Element UI 前端组件，开发了一套安防平台的前端管理系统。应用了 vuex、axios、echarts 等 Vue 主要技术栈，具备多级权限路由，图表显示各系统状态、动态响应等功能。实现通过简洁友善的操作界面对安防平台系统进行监控和管理。
+  opensource:
+    mcenter:
+      title: mcenter
+      addr: https://github.com/wanghaoxi3000/mcenter
+      decription: 一个基于 Django 和 Vue 开发的前后端分离的个人博客系统。支持博客文章分类、归档，Markdown 书写文章等基本博客功能。
+    payback-howlong-server:
+      title: 小程序后端
+      addr:  https://github.com/wanghaoxi3000/payback-howlong-server
+      decription: 今天刷啥好小程序后端, 基于 beego 框架开发，可通过 Dockerfile 使用 docker 进行快速部署。主要实现了微信登录、JWT 验证、快速计算信用卡的当前还款日间隔及基本信息等功能。
+    payback-howlong-weiapp:
+      title: 今天刷啥好
+      addr: https://github.com/wanghaoxi3000/payback-howlong-weiapp
+      decription: 今天刷啥好小程序，通过录入信用卡基本信息，方便有多张信用卡时，快速选择距离还款期最长的信用卡，适合在消费时习惯选择距离还款期最长的信用卡的人群使用。

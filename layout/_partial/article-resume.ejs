@@ -75,6 +75,28 @@
     </section>
 
     <section>
+      <div class="title project">
+        <p>开源项目</p>
+      </div>
+      <div class="project-detail">
+        <% var index = 0 %>
+        <% for(var i in theme.resume.opensource) { %>
+          <div class="col-3-abs" id="project-<%- index %>">
+            <div class="project-content"> <img class="project-detail-img" src="<%- url_for('images/resume/project' + index + '.png') %>" alt="">
+              <p class="project-title"><%- theme.resume.opensource[i].title %></p>
+              <p class="decription"><%- theme.resume.opensource[i].decription %></p>
+            </div>
+            <div class="link-to">
+              <a href="<%- theme.resume.opensource[i].addr %>" class="button" target="_blank">瞧一瞧</a>
+              <div class="shadow"></div>
+            </div>
+          </div>
+          <% index++ %>
+        <% } %>
+      </div>
+    </section>
+
+    <section>
       <div class="title work">
         <p>工作经历</p>
       </div>
