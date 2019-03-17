@@ -182,9 +182,9 @@ google_plus:
 fb_admins:
 fb_app_id:  
 
-# Coding page host
-coding:
-  show: true
+# show ICP
+icp:
+  name: 蜀ICP备18034166号-1
 
 # profile
 profile:

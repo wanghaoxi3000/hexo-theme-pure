@@ -7,8 +7,8 @@
         <div class="publishby">
         	<%= __('copyright.powered_by') %> <a href="https://hexo.io/" target="_blank"> Hexo</a>. <%= __('copyright.theme_by') %> <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
         </div>
-        <% if(theme.coding.show) { %>
-        <p>Hosted by <a href="https://coding.net/pages" style="font-weight: bold">Coding Pages</a></p>
+        <% if(theme.icp) { %>
+        <a href="http://www.miitbeian.gov.cn"><%= theme.icp.name %></a>
         <% } %>
     </div>
 </footer>

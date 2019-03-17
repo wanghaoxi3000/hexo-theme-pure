@@ -196,7 +196,7 @@ section .title.about-me::before {
     height: 66px;
 }
 .project-detail .col-3-abs:not(.endline) {
-    margin-right: 17px;
+    margin-right: 15px;
 }
 .project-detail .button {
     width: 225px;
