@@ -4,7 +4,7 @@ menu:
   Categories: categories  # 分类
   Archives: archives  # 归档
   Repository: repository  # github repositories
-  Books: books  # 豆瓣书单
+  # Books: books  # 豆瓣书单
   Links: links  # 友链
   Resume: resume # 简历
   # About: about  # 关于
@@ -16,7 +16,7 @@ menu_icons:
   categories: icon-folder
   archives: icon-archives-fill
   repository: icon-project
-  books: icon-book-fill
+  # books: icon-book-fill
   links: icon-friendship
   resume: icon-cup-fill
   # about: icon-cup-fill
