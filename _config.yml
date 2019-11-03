@@ -48,7 +48,7 @@ config:
 # Pagination
 pagination:
   number: false
-  prev: 
+  prev:
     alwayShow: true
   next:
     alwayShow: true
@@ -56,7 +56,7 @@ pagination:
 # Sidebar
 sidebar: right
 widgets:
-  - board  
+  - board
   - category
   - tagcloud
   - archive
@@ -66,7 +66,7 @@ widgets:
 index_widgets:
 # - category
 # - tagcloud
-# - archive  
+# - archive
 
 # widget behavior
 archive_type: 'monthly'
@@ -89,7 +89,7 @@ donate:
     title: 微信支付
   # 支付宝打赏
   alipay:
-    qrcode: images/donate/alipayimg.png 
+    qrcode: images/donate/alipayimg.png
     title: 支付宝
 
 # Share
@@ -100,7 +100,7 @@ share:
   mobile_sites: weibo,qq,qzone  # 移动端显示的分享图标
 
 # Github
-github: 
+github:
   username: wanghaoxi3000  # github username
 
 # Comment
@@ -109,15 +109,15 @@ github:
 comment:
   type: valine  # 启用哪种评论系统
   disqus:  # enter disqus shortname here
-  youyan: 
-    uid: # enter youyan uid 
+  youyan:
+    uid: # enter youyan uid
   livere:
     uid:
   gitment:
-    githubID: 
-    repo: 
-    ClientID: 
-    ClientSecret: 
+    githubID:
+    repo:
+    ClientID:
+    ClientSecret:
     lazy: false
   gitalk: # gitalk. https://gitalk.github.io/
     owner:  #必须. GitHub repository 所有者，可以是个人或者组织。
@@ -140,9 +140,9 @@ comment:
 # Api：
   # https://developers.douban.com/wiki/?title=book_v2 图书
   # https://developers.douban.com/wiki/?title=movie_v2 电影
-# books：  
+# books：
   # https://api.douban.com/v2/book/user/:name/collections?start=0&count=100 个人书单列表
-# movies: 
+# movies:
   # https://api.douban.com/v2/movie/in_theaters 正在上映的电影
   # https://api.douban.com/v2/movie/coming_soon 即将上映的电影
   # https://api.douban.com/v2/movie/subject/:id 单个电影信息
@@ -151,7 +151,7 @@ douban:
   user: darkreunion
   start: 0 # 从哪一条记录开始
   count: 100 # 获取豆瓣书单数据条数
-  
+
 # PV
 pv:
   busuanzi:
@@ -160,12 +160,12 @@ pv:
     enable: false  # leancloud统计
     app_id: # leancloud <AppID>
     app_key: # leancloud <AppKey>
-        
+
 # wordcount
 postCount:
   enable: true
   wordcount: true  # 文章字数统计
-  min2read: true  # 阅读时长预计 
+  min2read: true  # 阅读时长预计
 
 # Plugins
 plugins:
@@ -174,26 +174,26 @@ plugins:
   baidu_site_verification: MeyBQbsO2V
   baidu_analytics: 2aa84eb5eced551a567f24c1717e00b4
   baidu_autopush: true
-  # tencent_analytics: 
-  
+  # tencent_analytics:
+
 # Miscellaneous
 twitter:
 google_plus:
 fb_admins:
-fb_app_id:  
+fb_app_id:
 
 # show ICP
-icp:
-  name: 蜀ICP备18034166号-1
+# icp:
+#   name:
 
 # profile
 profile:
   enabled: true # Whether to show profile bar
-  article_show: false  # Whether to show on the bottom of article 
+  article_show: false  # Whether to show on the bottom of article
   avatar: images/avatar.png
   gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
   author:
-  author_title: 
+  author_title:
   author_description: 某中二的黑科技研究中心
   location:
   follow: https://github.com/wanghaoxi3000
@@ -212,7 +212,7 @@ profile:
 # resume
 resume:
   email: wanghaoxi3000@163.com
-  education: 
+  education:
     school-1:
       name: 四川理工学院 | 本科
       profession: 电子信息工程
