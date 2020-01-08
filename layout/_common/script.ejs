@@ -20,6 +20,9 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 <% if (page.layout != 'resume') { %>
    <%- partial('_script/fancybox') %>
 <% } %>
+<% if (page.layout === 'resume') { %>
+    <%- partial('_script/resume') %>
+ <% } %>
 <%- partial('_script/analytics') %>
 <%- partial('_script/baidupush') %>
 <%- partial('_script/mermaid') %>

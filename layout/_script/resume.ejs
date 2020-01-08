@@ -1,0 +1,68 @@
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        ////////////////
+        //VARIABLES
+        ////////////////
+        var view = $(window),
+            html = $('html'),
+            body = $('body');
+
+        ////////////////
+        //SKILLS ANIMATION
+        ////////////////
+        $('ul#skills').addClass("ready");
+        $('ul#skills li').each(function () {
+            var i = $(this).index();
+            $(this).delay(100 * i).animate({ right: "0%" }, 1000, function () {
+                $(this).children('span').fadeIn(600);
+            });
+        });
+
+        ////////////////
+        //SUCCESSFUL MESSAGE ALERT
+        ////////////////
+        if (window.location.hash == "#return") {
+            $('#contactform').slideUp(800, function () {
+                $('#messageSent').fadeIn(800);
+            });
+        }
+
+        ////////////////
+        //RESPONSIVE CHECK
+        ///////////////
+        function responsive() {
+            if (view.width() < 820) {
+                body.addClass('respond');
+            } else {
+                body.removeClass('respond');
+            }
+        }
+
+        responsive();
+
+        ////////////////
+        //WINDOW SCROLL
+        ////////////////
+        view.scroll(function () {
+            //PARALLAX BACKGROUND STUFF
+            var scrollPosition = $(window).scrollTop() * .25;
+            body.css({ backgroundPosition: '0px -' + scrollPosition + 'px' });
+        });
+
+        ////////////////
+        //WINDOW RESIZE
+        ///////////////
+        view.resize(function () {
+            responsive();
+        });
+
+        ////////////////
+        //WINDOW LOAD
+        ////////////////
+        view.load(function () {
+            responsive();
+        });
+
+    });
+</script>
