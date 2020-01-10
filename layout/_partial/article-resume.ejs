@@ -1,5 +1,6 @@
 <%- css('css/resume-style') %>
 <article class="container-resume">
+  <% var profile = config.about; %>
 
   <!--BEGIN STICKER-->
   <div id="sticker"></div>
@@ -9,19 +10,17 @@
   <div id="wrapper">
 
     <!--INTRODUCE NAME-->
-    <h2 id="titleName" class="sectionHead">简介</h2>
+    <h2 id="titleName" class="sectionHead">作者简介</h2>
 
     <!--BASE INFORMATION-->
     <div id="bio">
-      <h2>全栈工程师 / 程序员</h2>
+      <h2><%= profile.intro.title %></h2>
 
       <!--BASE INFORMATION - PERSONAL INFORMATION-->
       <p>
-        我是一个网页开发者，并且也是一个后端程序员，目前工作生活在郑州。
-        全栈工程师是我的目标， 让编程改变世界是我的理想。
-        在 CSDN 我是一个很活跃的用户，我很开心在那里可以写我的技术博客分享给大家。
-        除此之外，我还已经做过很多项目。
-        欢迎大家相互学习。
+        <% for (const item of profile.intro.description){ %>
+        <%= item; %>
+        <% } %>
       </p>
       <!--END PERSONAL INFORMATION-->
     </div>
@@ -30,19 +29,15 @@
     <div class="clear"></div>
 
     <!--SKILLS TITLE-->
-    <h2 id="tools" class="sectionHead">技能</h2>
+    <h2 id="tools" class="sectionHead">专业技能</h2>
     <!--SKILLS-->
     <ul id="skills">
       <!--Notice: the class names indicate the % of your skills. i.e. s70 = 70%, s40 = 40% etc. -->
-      <li id="skill1" class="s95"><span>PHP</span></li>
-      <li id="skill2" class="s60"><span>Linux</span></li>
-      <li id="skill3" class="s75"><span>Python</span></li>
-      <li id="skill4" class="s90"><span>HTML + CSS</span></li>
-      <li id="skill5" class="s65"><span>jQuery</span></li>
-      <li id="skill6" class="s80"><span>Mysql</span></li>
-      <li id="skill7" class="s70"><span>Apache + Nginx</span></li>
-      <li id="skill8" class="s80"><span>Memcached + Redis</span></li>
-      <li id="skill9" class="s40"><span><del>Photoshop</del></span></li>
+      <% let index = 1; %>
+      <% for (const name in profile.skills){ %>
+      <li id="skill<%- index %>" class="s<%- profile.skills[name] %>"><span><%- name %></span></li>
+      <% index++; %>
+      <% } %>
     </ul>
     <!--END SKILLS-->
 
@@ -52,63 +47,24 @@
     <h2 id="clock" class="sectionHead">工作经验</h2>
     <!--EXPERIENCE-->
     <ul id="jobs">
+      <% for (const item of profile.works){ %>
       <li>
         <div class="details">
-          <h3>郑州 WB 科技有限公司</h3>
-          <h4>PHP 工程师 - 郑州, 河南</h4>
-          <h5>Apr 2016 - 目前</h5>
+          <h3><%- item.company %></h3>
+          <h4><%- item.title %></h4>
+          <h5><%- item.time %></h5>
         </div>
-        <p>主要从事PHP开发，参与项目中的需求分析、数据库设计、项目开发、对自己负责模块进行需求分析和解决方案的提供等工作。</p>
-      </li>
-      <li>
-        <div class="details">
-          <h3>MW 信息科技有限公司</h3>
-          <h4>后端工程师 - 厦门, 福建</h4>
-          <h5>Oct 2015 - Apr 2016</h5>
+        <div class="details-list">
+          <ul>
+            <% for (const content of item.details){ %>
+            <li><%- content %></li>
+            <% } %>
+          </ul>
         </div>
-        <p>负责公司产品的技术研发和实现，设计开发移动互联网产品功能，项目接口以及PC端后台的开发。</p>
       </li>
-      <li>
-        <div class="details">
-          <h3>Huixin 科技有限公司</h3>
-          <h4>软件工程师 - 东莞, 广东</h4>
-          <h5>Jul 2015 - Oct 2015</h5>
-        </div>
-        <p>负责开发、维护、实施及测试网站系统，参与数据库设计工作，对部分PHP程序进行二次开发。</p>
-      </li>
+      <% } %>
     </ul>
     <!--END EXPERIENCE-->
-
-    <div class="clear"></div>
-
-    <!--EDUCATION TITLE-->
-    <h2 id="learn" class="sectionHead">教育背景</h2>
-    <!--EDUCATION-->
-    <ul id="schools">
-      <li>
-        <div class="details">
-          <h3>龙岩学院</h3>
-          <h4>学位头衔 - 学士</h4>
-          <h5>2011 - 2015</h5>
-        </div>
-        <p>主修计算机科学与技术专业，并取得学士学位。辅修物联网工程专业，专业知识扎实。</p>
-      </li>
-    </ul>
-    <!--END EDUCATION-->
-
-    <div class="clear"></div>
-
-    <!--HONORS / AWARDS TITLE-->
-    <h2 id="ribbon" class="sectionHead">荣誉 &amp; 奖励</h2>
-
-    <!--HONORS / AWARDS-->
-    <ul id="honorsAwards">
-      <li>第四届“华为杯”全国大学生智能设计竞赛 三等奖</li>
-      <li>第四届“锐智杯”福建省大学生嵌入式及智能设计大赛 一等奖</li>
-      <li>第四届“锐智杯”福建省大学生嵌入式及智能设计大赛 创新奖</li>
-      <li>第五届中国大学生服务外包创新创业大赛 三等奖</li>
-    </ul>
-    <!--END HONORS / AWARDS-->
 
     <div class="clear"></div>
 
@@ -116,87 +72,74 @@
     <h2 id="eye" class="sectionHead">项目经验</h2>
     <!--PROJECT-->
     <ul id="project">
+      <% for (const item of profile.projects){ %>
       <li>
         <div class="details">
-          <h3>蝠众商城平台项目</h3>
-          <h4>PC端后台,Android/Ios APP</h4>
-          <h5>Mar 2017 - Oct 2017</h5>
+          <h3><%- item.name %></h3>
+          <h4><%- item.tag %></h4>
+          <h5><%- item.time %></h5>
         </div>
-        <p>蝠众商城平台项目是一个在线商城项目，只存在移动端App,不存在网页浏览程序。我主要负责后台和移动端App接口的开发，目前项目已上线。</p>
+        <P><%- item.description %></P>
       </li>
-      <li>
-        <div class="details">
-          <h3>保险信息处理系统</h3>
-          <h4>PC端后台,微信端wap</h4>
-          <h5>Jan 2017 - Feb 2017</h5>
-        </div>
-        <p>保险信息处理系统主要功能是用于处理用户从微信端提交的保险申请信息，同意或是拒绝。此系统是我独立负责，从需求分析到项目开发最后到上线。</p>
-      </li>
-      <li>
-        <div class="details">
-          <h3>信瑞资本股票交易系统</h3>
-          <h4>PC端</h4>
-          <h5>Jun 2016 - Dec 2016</h5>
-        </div>
-        <p>信瑞资本系统是一个股票交易系统，使用通联数据获取股票数据信息。我主要负责数据库设计、项目后台开发、对自己负责模块进行需求分析和解决方案的提供。</p>
-      </li>
+      <% } %>
     </ul>
     <!--END PROJECT-->
 
     <div class="clear"></div>
 
     <!--RECOMMENDATIONS TITLE-->
-    <h2 id="chat" class="sectionHead">同事评语</h2>
+    <h2 id="chat" class="sectionHead">开源项目</h2>
     <!--RECOMMENDATIONS-->
     <ul id="recommends">
-      <li>
-        <h3>郑州 WB 科技有限公司</h3>
-      </li>
-      <li>
-        <div class="details">
-          <h3>李 XX</h3>
-          <h4>经理</h4>
-        </div>
-        <p>"他的工作能力很好，非常符合公司的发展需要。"</p>
-      </li>
-      <li>
-        <div class="details">
-          <h3>白 XX</h3>
-          <h4>项目经理</h4>
-        </div>
-        <p>"他的学习能力很好，开发中需要的新技术总是很快的就能学会应用，更是从来不拖延工期，这个非常棒。"</p>
-      </li>
-
-      <li>
-        <h3>MW 信息科技有限公司</h3>
-      </li>
-      <li>
-        <div class="details">
-          <h3>曹 XX</h3>
-          <h4>Java 工程师</h4>
-        </div>
-        <p>"他的逻辑思维能力非常好，编程能力也非常强，并且代码非常规范，就像他这个人一样。"</p>
-      </li>
-
-      <li>
-        <h3>Huixin 科技有限公司</h3>
-      </li>
-      <li>
-        <div class="details">
-          <h3>李 XX</h3>
-          <h4>经理</h4>
-        </div>
-        <p>"专业能力非常强，独立思考问题总是多方面的。总之是一个非常优秀的人。"</p>
-      </li>
-      <li>
-        <div class="details">
-          <h3>徐 XX</h3>
-          <h4>UI 设计师</h4>
-        </div>
-        <p>"和他对接工作非常流畅，团队协作的能力很好。不论在工作中还是生活中他都是一个值得深交的朋友。"</p>
-      </li>
+      <% for (const index in profile.openprojects){ %>
+        <li>
+          <h3><a href="<%- profile.openprojects[index].link %>" target="_blank"><i class="icon icon-link" ></i><%- profile.openprojects[index].name %></a></h3>
+        </li>
+        <li>
+          <div class="details">
+            <img class="logo-project" src="<%- url_for('images/resume/project' + index + '.png') %>" alt="">
+          </div>
+          <P><%- profile.openprojects[index].description %></P>
+        </li>
+      <% } %>
     </ul>
     <!--END RECOMMENDATIONS-->
+
+    <div class="clear"></div>
+
+    <!--EDUCATION TITLE-->
+    <h2 id="learn" class="sectionHead">教育背景</h2>
+    <!--EDUCATION-->
+    <ul id="schools">
+      <% for (const item of profile.educations){ %>
+        <li>
+          <div class="details">
+            <h3><%- item.name %></h3>
+            <h4><%- item.degree + ' - ' + item.major %></h4>
+            <h5><%- item.time %></h5>
+          </div>
+          <div class="details-list">
+            <ul>
+              <% for (const detail of item.details){ %>
+              <li><%- detail %></li>
+              <% } %>
+            </ul>
+          </div>
+        </li>
+      <% } %>
+    </ul>
+    <!--END EDUCATION-->
+
+    <div class="clear"></div>
+
+    <!--HONORS / AWARDS TITLE-->
+    <!-- <h2 id="ribbon" class="sectionHead">荣誉 &amp; 奖励</h2> -->
+
+    <!--HONORS / AWARDS-->
+    <!-- <ul id="honorsAwards">
+      <li>第四届“华为杯”全国大学生智能设计竞赛 三等奖</li>
+    </ul> -->
+    <!-- END HONORS / AWARDS -->
 
   </div>
   <!--END WRAPPER-->
