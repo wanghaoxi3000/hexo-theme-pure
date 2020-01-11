@@ -43,8 +43,28 @@
 
     <div class="clear"></div>
 
+    <!--AS SEEN ON TITLE-->
+    <h2 id="eye" class="sectionHead">项目经验</h2>
+    <!--PROJECT-->
+    <ul id="project">
+      <% for (const item of profile.projects){ %>
+      <li>
+        <div class="details">
+          <h3><%- item.name %></h3>
+          <h4><%- item.company %></h4>
+          <h4><%- item.tag %></h4>
+          <h5><%- item.time %></h5>
+        </div>
+        <P><%- item.description %></P>
+      </li>
+      <% } %>
+    </ul>
+    <!--END PROJECT-->
+
+    <div class="clear"></div>
+
     <!--EXPERIENCE TITLE-->
-    <h2 id="clock" class="sectionHead">工作经验</h2>
+    <h2 id="clock" class="sectionHead">工作经历</h2>
     <!--EXPERIENCE-->
     <ul id="jobs">
       <% for (const item of profile.works){ %>
@@ -68,39 +88,21 @@
 
     <div class="clear"></div>
 
-    <!--AS SEEN ON TITLE-->
-    <h2 id="eye" class="sectionHead">项目经验</h2>
-    <!--PROJECT-->
-    <ul id="project">
-      <% for (const item of profile.projects){ %>
-      <li>
-        <div class="details">
-          <h3><%- item.name %></h3>
-          <h4><%- item.tag %></h4>
-          <h5><%- item.time %></h5>
-        </div>
-        <P><%- item.description %></P>
-      </li>
-      <% } %>
-    </ul>
-    <!--END PROJECT-->
-
-    <div class="clear"></div>
-
     <!--RECOMMENDATIONS TITLE-->
     <h2 id="chat" class="sectionHead">开源项目</h2>
     <!--RECOMMENDATIONS-->
     <ul id="recommends">
       <% for (const index in profile.openprojects){ %>
-        <li>
-          <h3><a href="<%- profile.openprojects[index].link %>" target="_blank"><i class="icon icon-link" ></i><%- profile.openprojects[index].name %></a></h3>
-        </li>
-        <li>
-          <div class="details">
-            <img class="logo-project" src="<%- url_for('images/resume/openproj-logo/project' + index + '.png') %>" alt="">
-          </div>
-          <P><%- profile.openprojects[index].description %></P>
-        </li>
+      <li>
+        <h3><a href="<%- profile.openprojects[index].link %>" target="_blank"><i
+              class="icon icon-link"></i><%- profile.openprojects[index].name %></a></h3>
+      </li>
+      <li>
+        <div class="details">
+          <img class="logo-project" src="<%- url_for('images/resume/openproj-logo/project' + index + '.png') %>" alt="">
+        </div>
+        <P><%- profile.openprojects[index].description %></P>
+      </li>
       <% } %>
     </ul>
     <!--END RECOMMENDATIONS-->
@@ -112,20 +114,20 @@
     <!--EDUCATION-->
     <ul id="schools">
       <% for (const item of profile.educations){ %>
-        <li>
-          <div class="details">
-            <h3><%- item.name %></h3>
-            <h4><%- item.degree + ' - ' + item.major %></h4>
-            <h5><%- item.time %></h5>
-          </div>
-          <div class="details-list">
-            <ul>
-              <% for (const detail of item.details){ %>
-              <li><%- detail %></li>
-              <% } %>
-            </ul>
-          </div>
-        </li>
+      <li>
+        <div class="details">
+          <h3><%- item.name %></h3>
+          <h4><%- item.degree + ' - ' + item.major %></h4>
+          <h5><%- item.time %></h5>
+        </div>
+        <div class="details-list">
+          <ul>
+            <% for (const detail of item.details){ %>
+            <li><%- detail %></li>
+            <% } %>
+          </ul>
+        </div>
+      </li>
       <% } %>
     </ul>
     <!--END EDUCATION-->
