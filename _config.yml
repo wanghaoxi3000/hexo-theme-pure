@@ -37,7 +37,7 @@ site:
   board: |
     <p>恭喜你发现了这个小站</p>
     <p style="margin-top:15px;">
-      资料库：<strong><a href="https://www.yuque.com/haoxi-7jldh/backend-knowledge/">后端知识库</a></strong>
+      资料库：<strong><a href="https://www.yuque.com/haoxi-7jldh/backend-knowledge/" target="_blank">后端知识库</a></strong>
     </p>
   copyright: true # 底部版权信息
 
